@@ -20,11 +20,14 @@ class Buscaminas{
     vector< vector <Casilla> > tablero;
     int num_filas, num_columnas;
     int num_bombas;
+    int num_casillas_descubiertas;
+    bool bombas_colocadas;
 
     void Explosion();
-    void Victoria();
-    void ColocarBombas();
+    void ColocarBombas(int fila, int columna);
     string mostrarCasilla(Casilla casilla);
+    void Victoria();
+    void Derrota();
 
   public:
 
@@ -32,9 +35,9 @@ class Buscaminas{
     Buscaminas(int filas, int columnas, int bombas);
 
 
-    // Descubrir
     bool Descubrir(int fila, int columna);
     void PonerBandera(int fila, int columna);
+    bool Pulsar(int fila, int columna);
     void AbrirTablero(int fila, int columna);
 
     void MostrarTablero();
